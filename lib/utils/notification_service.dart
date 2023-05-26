@@ -83,10 +83,17 @@ class NotificationService {
         payload: message.data['title']);
 
     });    
+  }
 
-    // Retrieve the FCM token
-    String? fcmToken = await _firebaseMessaging.getToken();
-    print('FCM Token: $fcmToken');
+  Future<String> getFCMToken() async {
+    String? fcmTokenNullable = await _firebaseMessaging.getToken();
+    String fcmToken = "";
+    if(fcmTokenNullable == null) {
+      fcmToken = "Cannot get token.";
+    } else {
+      fcmToken = fcmTokenNullable;
+    }
+    return fcmToken;
   }
 
 

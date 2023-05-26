@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'fav_screen.dart';
+import 'fcm_token_screen.dart';
 import 'main_screen.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
@@ -18,6 +19,7 @@ class _MyBottomNavigationBarState
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
     FavScreen(),
+    FCMTokenScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -41,6 +43,10 @@ class _MyBottomNavigationBarState
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favourite',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.token),
+            label: 'FCM Token',
           ),
         ],
         currentIndex: _selectedIndex,

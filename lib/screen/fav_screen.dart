@@ -33,6 +33,7 @@ class _FavScreenState extends State<FavScreen> {
         ),
         backgroundColor: Colors.white, // Set background color to white
       ),
+      
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
