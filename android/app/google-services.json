@@ -34,7 +34,7 @@
               "client_id": "420036700517-2gc4d2ctafo8vj5kc3uhnsc877e4i1di.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.min.weatherApp"
+                "bundle_id": "com.example.weatherApp"
               }
             }
           ]

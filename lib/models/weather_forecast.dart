@@ -1,4 +1,5 @@
 // Smaplify the model get the field only need
+
 class WeatherModel {
 
   // location
@@ -21,15 +22,12 @@ class WeatherModel {
   // 3 day forecast
   String? dateOne; // next one 
   String? dateTwo; // next one 
-  String? dateThree; // next one 
 
   double? avgtempCOne;
   double? avgtempCTwo;
-  double? avgtempCThree;
 
   String? iconOne;
   String? iconTwo;
-  String? iconThree;
 
   WeatherModel.fromJsonLocal(Map<String, dynamic> json) {
     locationName = json['locationName'];
@@ -44,29 +42,25 @@ class WeatherModel {
 
     dateOne = json['dateOne'];
     dateTwo = json['dateTwo'];
-    dateThree = json['dateThree'];
     avgtempCOne = json['avgtempCOne'];
     avgtempCTwo = json['avgtempCTwo'];
-    avgtempCThree = json['avgtempCThree'];
     iconOne = json['iconOne'];
     iconTwo = json['iconTwo'];
-    iconThree = json['iconThree'];
 
   }
 
 
-
   WeatherModel.fromJson(Map<String, dynamic> json) {
-
     Location? location = json['location'] != null
         ? Location.fromJson(json['location'])
         : null;
     Current? current = json['current'] != null 
         ? Current.fromJson(json['current']) 
-        : null;
+      : null;
     Forecast? forecast = json['forecast'] != null
         ? Forecast.fromJson(json['forecast'])
         : null;
+
 
     locationName = location?.name;
     tempC = current?.tempC;
@@ -78,15 +72,13 @@ class WeatherModel {
     windDir = current?.windDir;
     icon = current?.condition?.icon;
 
+
     dateOne = forecast?.forecastday![1].date; 
     dateTwo = forecast?.forecastday![2].date;  
-    dateThree = forecast?.forecastday![3].date; 
     avgtempCOne = forecast?.forecastday![1].day!.avgtempC;
     avgtempCTwo = forecast?.forecastday![2].day!.avgtempC;
-    avgtempCThree = forecast?.forecastday![3].day!.avgtempC;
     iconOne = forecast?.forecastday![1].day!.condition!.icon.toString();
     iconTwo = forecast?.forecastday![2].day!.condition!.icon.toString();
-    iconThree = forecast?.forecastday![3].day!.condition!.icon.toString();
 
   }
 
@@ -94,13 +86,10 @@ class WeatherModel {
     return {
       'dateOne' : dateOne,
       'dateTwo' : dateTwo,
-      'dateThree' : dateThree,
       'avgtempCOne' : avgtempCOne,
       'avgtempCTwo' : avgtempCTwo,
-      'avgtempCThree' : avgtempCThree,
       'iconOne' : iconOne,
       'iconTwo' : iconTwo,
-      'iconThree' : iconThree,
 
       'locationName' : locationName,
       'tempC' : tempC,

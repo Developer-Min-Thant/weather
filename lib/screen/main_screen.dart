@@ -303,9 +303,7 @@ class ForecastFutureDay extends StatelessWidget {
     var firstDate = DateFormat.yMMMMd()
         .format(DateTime.parse(weather.dateOne.toString())); // print long date
     var secondDate = DateFormat.yMMMMd()
-        .format(DateTime.parse(weather.dateTwo.toString())); // print long date
-    var thirdDate = DateFormat.yMMMMd().format(
-        DateTime.parse(weather.dateThree.toString())); // print long date
+        .format(DateTime.parse(weather.dateTwo.toString())); // print long date/ print long date
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
@@ -355,22 +353,11 @@ class ForecastFutureDay extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  customListTile(
-                    first: '',
-                    second: thirdDate,
-                    text: "${weather.avgtempCThree} °C",
-                    icon: Icons.speed,
-                    iconColor: Colors.red[300]!,
-                    url: getUrlForLocal(weather.iconThree.toString()),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
                 ],
               ),
             ),
           ),
-        ],
+      ],
       ),
     );
   }

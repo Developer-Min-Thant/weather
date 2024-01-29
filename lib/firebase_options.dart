@@ -64,6 +64,6 @@ class DefaultFirebaseOptions {
     projectId: 'weather-e2c1f',
     storageBucket: 'weather-e2c1f.appspot.com',
     iosClientId: '420036700517-2gc4d2ctafo8vj5kc3uhnsc877e4i1di.apps.googleusercontent.com',
-    iosBundleId: 'com.min.weatherApp',
+    iosBundleId: 'com.example.weatherApp',
   );
 }
